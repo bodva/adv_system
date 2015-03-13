@@ -25,4 +25,6 @@ phpunit.phar
 
 .bowerrc
 
-uploads
+web/uploads/*.png
+web/uploads/*.gif
+web/uploads/*.jpg
