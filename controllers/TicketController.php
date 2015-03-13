@@ -35,9 +35,6 @@ class TicketController extends Controller {
 			}
 			if (empty($model->errors)) {
 				$this->redirect('/ticket?id=' . $model->id);
-			} else {
-				var_dump($model->errors);
-				die;
 			}
 		}
 

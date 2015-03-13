@@ -13,7 +13,7 @@ use yii\web\UploadedFile;
  */
 class Ticket extends ActiveRecord {
 	/**
-	 * @var UploadedFile
+	 * @var UploadedFile $file
 	 */
 	public $file;
 
@@ -22,14 +22,13 @@ class Ticket extends ActiveRecord {
 	 */
 	public function rules() {
 		return [
-//			 title, descr, author are required
 			[['title', 'descr', 'author', 'price', 'file'], 'required'],
 			[['file'], 'file', 'extensions' => 'gif, jpg, png'],
 		];
 	}
 
 	/**
-	 * @param $post
+	 * @param array $post
 	 */
 	public function set($post) {
 		$this->setAttributes($post);
@@ -40,7 +39,7 @@ class Ticket extends ActiveRecord {
 	}
 
 	/**
-	 * @return int|bool;
+	 * @return int|bool add id or false if save has errors
 	 */
 	public function add() {
 		try {
